@@ -24,10 +24,14 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Install JDK and Maven
+      - name: Install JDK
         uses: actions/setup-java@v2
         with:
           java-version: '11'
+          
+      - name: Set up Maven
+        uses: integrant/setup-maven@v1  # Альтернативный экшен для установки Maven
+        with:
           maven-version: '3.8.4'
               
       - name: Install dependencies
