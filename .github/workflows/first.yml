@@ -21,13 +21,14 @@ jobs:
           architecture: x64
           distribution: 'adoptopenjdk'
       # Устанавливаем Maven
-      - name: Set up Maven
-        uses: integrant/setup-maven@v1
+      - name: Set up Maven 
+        id: cache
+        uses: actions/cache@v2
         with:
           maven-version: '3.8.4'
 
       - name: Install dependencies
-        run: mvn install  # 
+        run: mvn install  #
 
       - name: Build Project
         run: mvn clean install 
