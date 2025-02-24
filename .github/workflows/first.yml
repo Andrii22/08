@@ -21,11 +21,13 @@ jobs:
           architecture: x64
           distribution: 'temurin' 
       # Устанавливаем Maven
-      - name: Set up Maven 
-        id: cache
-        uses: actions/cache@v2
-        with:
-          maven-version: '3.8.4'
+      #- name: Cache Maven dependencies
+      #  uses: actions/cache@v3
+       # with:
+        #  path: ~/.m2/repository  # Кэшируем Maven зависимости
+         # key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}  # Используем хеш pom.xml
+          #restore-keys: |
+           # ${{ runner.os }}-maven-
 
       - name: Install dependencies
         run: mvn install  #
