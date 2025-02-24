@@ -25,14 +25,14 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install JDK
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v4
         with:
           java-version: '11'
           
-      - name: Set up Maven
-        uses: integrant/setup-maven@v1  # Альтернативный экшен для установки Maven
-        with:
-          maven-version: '3.8.4'
+      #- name: Set up Maven
+      #  uses: integrant/setup-maven@v1  # Альтернативный экшен для установки Maven
+      #  with:
+      #    maven-version: '3.8.4'
               
       - name: Install dependencies
         run: mvn install
